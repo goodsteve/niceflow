@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Nice Flow - An Incomplete HTML5 Flow Chart Tool</title>
+    <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Include css file. -->
+    <link type="text/css" href="css/niceflow.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/jcanvas.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- Include javascript class. -->
+    <script type="text/javascript" src="js/canvas.class.js"></script>
+    <script type="text/javascript" src="js/niceflow.class.js"></script>
+    <script type="text/javascript" src="js/shapes.class.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        nf = new Niceflow();
+        nf.init();
+        $('#nfWindow').fadeIn();
+        $('#shapesBarGeometric .newShape').click(function() {
+          nf.canvas.newShape($('#' + this.id).attr('rel'));
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="niceflow">
+      <div class="nf-header">
+        <div class="row">
+          <div class="span3"><a href="index.html"><img src="img/niceflow_logo_1.png" border="0" /></a></div>
+          <div class="span11 nf-blurb">Niceflow was a side project started as an excuse to play around with HTML5 canvas.  The source code is ugly and uncommented, but perhaps some plucky programmers can use it as a foundation for something interesting.  - Steve</div>
+          <div class="span4">
+            <ul class="nav nav-pills pull-right">
+              <li><a href="http://www.goodsteve.co/" title="Development Blog">blog</a></li>
+              <li><a href="https://github.com/goodsteve/niceflow" title="github Repository" target="_blank">github</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="nfWindow">
+        <div class="row">
+          <div class="span3">
+            <div id="nfLeftBar">
+              <div class="accordion" id="leftBar">
+                <div class="accordion-group">
+                  <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftBar" href="#leftBarFlows">
+                      Flows
+                    </a>
+                  </div>
+                  <div id="leftBarFlows" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      Flow menu.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-group">
+                  <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftBar" href="#leftBarShapes">
+                      Shapes
+                    </a>
+                  </div>
+                  <div id="leftBarShapes" class="accordion-body collapse in">
+                    <div class="accordion-inner">
+                      <div id="nfShapesBar">
+                        <div class="accordion" id="shapesBar">
+                          <div class="accordion-group">
+                            <div class="accordion-heading">
+                              <a class="accordion-toggle" data-toggle="collapse" data-parent="#shapesBar" href="#shapesBarGeometric">
+                                Geometric
+                              </a>
+                            </div>
+                            <div id="shapesBarGeometric" class="accordion-body collapse in">
+                              <div class="accordion-inner">
+                                <div class="row">
+                                  <div id="newCircle" class="span1 newShape" rel="circle">Circle</div>
+                                  <div id="newDiamond" class="span1 newShape" rel="diamond">Diamond</div>
+                                  <div id="newParallelogram" class="span2 newShape" rel="parallelogram">Parallelogram</div>
+                                </div>
+                                <div class="row">
+                                  <div id="newRectangle" class="span1 newShape" rel="rectangle">Rectangle</div>
+                                  <div id="newSquare" class="span1 newShape" rel="square">Square</div>
+                                  <div id="newTriangle" class="span2 newShape" rel="triangle">Triangle</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-group">
+                  <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftBar" href="#leftBarArrows">
+                      Arrows
+                    </a>
+                  </div>
+                  <div id="leftBarArrows" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      Arrow menu.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-group">
+                  <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftBar" href="#leftBarLines">
+                      Lines
+                    </a>
+                  </div>
+                  <div id="leftBarLines" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      Line menu.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-group">
+                  <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftBar" href="#leftBarText">
+                      Text
+                    </a>
+                  </div>
+                  <div id="leftBarText" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      Text menu.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="span12">
+            <canvas id="nfCanvas" width="940" height="640">Your web browser does not support HTML5.  Your browser is bad, and you should feel bad.</canvas>
+          </div>
+          <div class="span3">
+            <div id="nfRightBar">
+              <div class="accordion" id="rightBar">
+                <div class="accordion-group">
+                  <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#rightBar" href="#rightBarOptions">
+                      Options
+                    </a>
+                  </div>
+                  <div id="rightBarOptions" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      Options menu.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-group">
+                  <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#rightBar" href="#rightBarProperties">
+                      Properties
+                    </a>
+                  </div>
+                  <div id="rightBarProperties" class="accordion-body collapse in">
+                    <div class="accordion-inner">
+                      Properties menu.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-group">
+                  <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#rightBar" href="#rightBarCollaborate">
+                      Collaborate
+                    </a>
+                  </div>
+                  <div id="rightBarCollaborate" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      Collaboration menu.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

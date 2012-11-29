@@ -1,0 +1,15 @@
+body {padding: 0; margin: auto;}
+#nfCanvas {border: 1px solid #888;}
+#nfWindow {width: 1420px; margin: auto; display: none;}
+#niceflow {margin: 20px;}
+#niceflow a {color: #555;}
+#niceflow h4 {color: #555;}
+#niceflow .accordion-group .accordion-heading {background-color: #eee;}
+#niceflow .accordion-group .accordion-heading a {color: #333;}
+#niceflow .nf-blurb {font-size: 12px; font-style: italic;}
+#niceflow .nf-label {padding-top: 4px; display: inline-block; font-weight: bold;}
+#niceflow .nf-select {width: 140px;}
+#niceflow .nf-align-right {text-align: right;}
+#niceflow .nf-header {width: 1420px; margin: auto;}
+#shapesBarGeometric .newShape {color: #333; margin-top: 5px; margin-bottom: 5px; padding-top: 10px; padding-bottom: 10px;}
+#shapesBarGeometric .newShape:hover {cursor: pointer; color: #000; text-decoration: underline;}

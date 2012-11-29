@@ -1,4 +1,4 @@
-niceflow
+Niceflow
 ========
 
 An incomplete HTML5 flowchart tool.

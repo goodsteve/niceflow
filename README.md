@@ -16,12 +16,6 @@ Features
 
 
 
-Demo
-====
-http://goodsteve.co/niceflow/
-
-
-
 Libraries and Resources
 =======================
 
